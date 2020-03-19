@@ -270,7 +270,7 @@ kbd {
   border: 1px solid #ccc;
   border-radius: 0.2em;
   box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
-  color: #555;
+  color: #d05;
   font-family: inherit;
   padding: 0.1em 0.3em;
   white-space: nowrap;
@@ -430,7 +430,7 @@ code {
 code {
   background: #eee;
   border-radius: 3px;
-  color: #555;
+  color: #d05;
   padding: 2px 4px;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -962,16 +962,16 @@ pre .javascript .function {
 }
 .main-inner {
   margin: 0 auto;
-  width: 700px;
+  width: 800px;
 }
 @media (min-width: 1200px) {
   .main-inner {
-    width: 800px;
+    width: 900px;
   }
 }
 @media (min-width: 1600px) {
   .main-inner {
-    width: 900px;
+    width: 1000px;
   }
 }
 .header {
@@ -979,16 +979,16 @@ pre .javascript .function {
 }
 .header-inner {
   margin: 0 auto;
-  width: 700px;
+  width: 800px;
 }
 @media (min-width: 1200px) {
   .header-inner {
-    width: 800px;
+    width: 900px;
   }
 }
 @media (min-width: 1600px) {
   .header-inner {
-    width: 900px;
+    width: 1000px;
   }
 }
 .site-brand-container {
@@ -1210,7 +1210,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #606c3c;
+  background: #3949da;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1418,16 +1418,16 @@ pre .javascript .function {
   box-sizing: border-box;
   margin: 0 auto;
   text-align: center;
-  width: 700px;
+  width: 800px;
 }
 @media (min-width: 1200px) {
   .footer-inner {
-    width: 800px;
+    width: 900px;
   }
 }
 @media (min-width: 1600px) {
   .footer-inner {
-    width: 900px;
+    width: 1000px;
   }
 }
 .with-love {

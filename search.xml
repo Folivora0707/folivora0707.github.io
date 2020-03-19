@@ -3,7 +3,7 @@
   <entry>
     <title>Test2</title>
     <url>/2020/03/18/Test2/</url>
-    <content><![CDATA[<h1 id="Test2"><a href="#Test2" class="headerlink" title="Test2"></a>Test2</h1><p>这是一篇没有<a id="more"></a>灵魂的博文！</p>
+    <content><![CDATA[<h1 id="Test2"><a href="#Test2" class="headerlink" title="Test2"></a>Test2</h1><p>这是一篇 <code>no</code> <a id="more"></a>灵魂的博文！</p>
 ]]></content>
   </entry>
   <entry>
@@ -14,17 +14,5 @@
 
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>加密测试</title>
-    <url>/2016/12/01/password/</url>
-    <content><![CDATA[<h1 id="嘿嘿"><a href="#嘿嘿" class="headerlink" title="嘿嘿"></a>嘿嘿</h1><p>你又看到一条炸天帮留言！</p>
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
   </entry>
 </search>
