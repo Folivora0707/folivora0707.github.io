@@ -1210,7 +1210,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #3949da;
+  background: #9d5bff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2513,4 +2513,62 @@ embed {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+/* 首页文章阴影样式，好像不管用
+.post {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 25px;
+    -webkit-box-shadow: 0 0 14px rgba(202, 203, 203, .5);
+    -moz-box-shadow: 0 0 14px rgba(202, 203, 204, .5);
+}
+*/
+body {
+/* background: url(https://source.unsplash.com/random/1600x900);  自动换背景，略蠢 */
+  background-image: url("/images/header-bk.jpg");
+  background-repeat: repeat-x;
+  background-color: #f4f4f5;
+}
+.main-inner {
+  width: 700px;
+  margin-top: 100px;
+  padding: 60px 60px 60px 60px;
+  background: #fff;
+  min-height: 500px;
+  padding: 25px;
+  -webkit-box-shadow: 0 0 14px rgba(202,203,203,0.5);
+  -moz-box-shadow: 0 0 14px rgba(202,203,204,0.5);
+}
+.posts-expand {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+}
+/* 彩条header */
+.header {
+/*这可以填充一个彩条*/
+  height: 162px;
+}
+.site-brand-container {
+  height: 150px;
+}
+.brand {
+  background-color: transparent;
+  padding-bottom: 15px;
+  padding-top: 10px;
+}
+.site-title {
+  font-family: STXingkai;
+  font-size: 80px;
+  height: 120px;
+  width: 800px;
+}
+.header-inner {
+  padding-top: 15px;
+  height: 150px;
+}
+/*侧边栏*/
+.sidebar {
+  box-shadow: inset 2px 2px 40px #525252;
+  background-color: #323232 !important;
 }
