@@ -1210,7 +1210,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #99e4ff;
+  background: #bb7f36;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2514,15 +2514,6 @@ embed {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-/* 首页文章阴影样式，好像不管用
-.post {
-    margin-top: 60px;
-    margin-bottom: 60px;
-    padding: 25px;
-    -webkit-box-shadow: 0 0 14px rgba(202, 203, 203, .5);
-    -moz-box-shadow: 0 0 14px rgba(202, 203, 204, .5);
-}
-*/
 body {
 /* background: url(https://source.unsplash.com/random/1600x900);  自动换背景，略蠢 */
   background-image: url("/images/header-bk.jpg");
@@ -2571,4 +2562,7 @@ body {
 .sidebar {
   box-shadow: inset 2px 2px 40px #525252;
   background-color: #323232 !important;
+}
+.power.txt-right {
+  display: none;
 }
