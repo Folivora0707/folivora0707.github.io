@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>链表是否有环问题</title>
+    <url>/2020/03/31/20033101/</url>
+    <content><![CDATA[<h4 id="问题一：判断链表是否有环"><a href="#问题一：判断链表是否有环" class="headerlink" title="问题一：判断链表是否有环"></a>问题一：判断链表是否有环</h4><p><strong>快慢指针法</strong><br><br>表头开始，slow指针每次走一步，fast指针每次走两步。<br>两者相遇则有环，<code>fast==NULL || fast-&gt;next==NULL</code>则无环。<br>这一问题较为简单，但通过这一问题我们可以得到一个<strong>相遇点</strong>，有助于解决进一步的问题。<a id="more"></a></p>
+<h4 id="问题二：求链表中环的距离"><a href="#问题二：求链表中环的距离" class="headerlink" title="问题二：求链表中环的距离"></a>问题二：求链表中环的距离</h4><p>问题一我们得到的相遇点就是环上的一点，因此求环的距离就变得很简单。<br>只需要记录相遇点的位置，从相遇点发出一个指针每次走一步并计数，再次到达相遇点时便求出了链表中环的距离。</p>
+<h4 id="问题三：找到环的入口结点"><a href="#问题三：找到环的入口结点" class="headerlink" title="问题三：找到环的入口结点"></a>问题三：找到环的入口结点</h4><p><strong>解法一</strong>&emsp;基于问题二得到的距离，可以采用双指针法，一个指针从表头出发，另一个指针先走一个环的距离，再同表头指针一起前进。这两个指针一直隔着一个环的距离，那么他们再次相遇的点，是第一个指针刚进入环的点，即环的入口结点。<br><br><strong>解法二</strong>&emsp;相对而言，解法一比较容易理解，但还有一种更简单的方法得到环的入口结点。<br><br>同样是双指针法，但这次，一个指针在表头，另一个指针在问题一得到的相遇点。两指针再次相遇点即为环的入口结点。<br><br><img src="/images/20033101.png" /> <br><br>如图，表头为<code>A</code>，环入口为<code>B</code>，相遇点为<code>C</code>，AB距离为<code>a</code>，BC距离为<code>b</code>，环长度为<code>r</code>，那么CB距离为<code>r-b</code>。<br><br>slow指针走到C走的距离为<code>S = a + b</code>，fast走过的距离为slow的两倍，假设fast已经走了n圈，即<code>2S = a + nr + b</code>。<br>化简<code>2(a + b) = a + b + nr</code>，得到<code>a = nr - b = (n - 1)r + r - b</code>。<br>即<code>AB = (n - 1)r + CB</code>，解释一下就是A到B的距离，等于从C开始走n-1圈再走到B，不正是两点相遇？</p>
+]]></content>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>链表</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>今日树洞</title>
     <url>/2020/03/30/20033002/</url>
     <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="别试了 = =" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
@@ -48,6 +60,20 @@
 <li>响应（Response）。</li>
 <li>证实（Confirmation）。<br><br>有应答服务包括4类，无应答只有请求和指示。<br></li>
 </ul>
+<ol start="8">
+<li>计算机网络提供的服务分类：</li>
+</ol>
+<ul>
+<li>面向连接服务和无连接服务</li>
+<li>可靠服务和不可靠服务</li>
+<li>有应答服务和无应答服务</li>
+</ul>
+<ol start="9">
+<li>ISO/OSI参考模型<br><br>第七层： 应用层（Application Layer）<br><br>第六层： 表示层（Presentation Layer）<br><br>第五层： 会话层（Session Layer）<br><br>第四层： 传输层（Transport Layer）<br><br>第三层： 网络层（Network Layer）<br><br>第二层： 数据链路层（Data Link Layer）<br><br>第一层： 物理层（Physical Layer）<br>&emsp;</li>
+<li>物理层协议也称物理层规程。<br>&ensp;</li>
+<li>TCP/IP模型<br><br>第四层： 应用层，即，OSI模型5、6、7层<br><br>第三层： 传输层，即，OSI第四层<br><br>第二层： 网际层，即，OSI第三层<br><br>第一层： 网络接口层，即，OSI模型1、2层<br>&emsp;</li>
+<li>OSI网络层支持无连接和面向连接的通信，传输层仅有面向连接；<br><br>TCP/IP网络层仅有无连接，传输层有无连接和面向连接两种。<br>&emsp;</li>
+</ol>
 ]]></content>
       <tags>
         <tag>计算机网络</tag>
