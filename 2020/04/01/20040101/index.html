@@ -38,23 +38,20 @@
 </style>
 
 
-  <meta name="description" content="问题一：判断链表是否有环快慢指针法表头开始，slow指针每次走一步，fast指针每次走两步。两者相遇则有环，fast&#x3D;&#x3D;NULL || fast-&gt;next&#x3D;&#x3D;NULL则无环。这一问题较为简单，但通过这一问题我们可以得到一个相遇点，有助于解决进一步的问题。">
+  <meta name="description" content="日常发几句牢骚，不给看。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="链表是否有环问题">
-<meta property="og:url" content="http://yoursite.com/2020/03/31/20033101/index.html">
+<meta property="og:title" content="今日树洞">
+<meta property="og:url" content="http://yoursite.com/2020/04/01/20040101/index.html">
 <meta property="og:site_name" content="执剑长歌，Biubiubiubiu！">
-<meta property="og:description" content="问题一：判断链表是否有环快慢指针法表头开始，slow指针每次走一步，fast指针每次走两步。两者相遇则有环，fast&#x3D;&#x3D;NULL || fast-&gt;next&#x3D;&#x3D;NULL则无环。这一问题较为简单，但通过这一问题我们可以得到一个相遇点，有助于解决进一步的问题。">
+<meta property="og:description" content="日常发几句牢骚，不给看。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/images/20033101.png">
-<meta property="article:published_time" content="2020-03-31T03:24:03.269Z">
-<meta property="article:modified_time" content="2020-03-31T04:17:16.664Z">
+<meta property="article:published_time" content="2020-04-01T09:05:14.000Z">
+<meta property="article:modified_time" content="2020-04-01T09:09:38.667Z">
 <meta property="article:author" content="多喝凉水。">
-<meta property="article:tag" content="数据结构">
-<meta property="article:tag" content="链表">
+<meta property="article:tag" content="树洞">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/20033101.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/03/31/20033101/">
+<link rel="canonical" href="http://yoursite.com/2020/04/01/20040101/">
 
 
 <script id="page-configurations">
@@ -66,7 +63,7 @@
   };
 </script>
 
-  <title>链表是否有环问题 | 执剑长歌，Biubiubiubiu！</title>
+  <title>今日树洞 | 执剑长歌，Biubiubiubiu！</title>
   
 
 
@@ -201,7 +198,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/31/20033101/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/01/20040101/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -214,7 +211,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          链表是否有环问题
+          今日树洞
         </h1>
 
         <div class="post-meta">
@@ -225,7 +222,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-03-31 11:24:03 / 修改时间：12:17:16" itemprop="dateCreated datePublished" datetime="2020-03-31T11:24:03+08:00">2020-03-31</time>
+              <time title="创建时间：2020-04-01 17:05:14 / 修改时间：17:09:38" itemprop="dateCreated datePublished" datetime="2020-04-01T17:05:14+08:00">2020-04-01</time>
             </span>
 
           
@@ -237,8 +234,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/03/31/20033101/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/31/20033101/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/04/01/20040101/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/01/20040101/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -253,16 +250,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h4 id="问题一：判断链表是否有环"><a href="#问题一：判断链表是否有环" class="headerlink" title="问题一：判断链表是否有环"></a>问题一：判断链表是否有环</h4><p><strong>快慢指针法</strong><br><br>表头开始，slow指针每次走一步，fast指针每次走两步。<br>两者相遇则有环，<code>fast==NULL || fast-&gt;next==NULL</code>则无环。<br>这一问题较为简单，但通过这一问题我们可以得到一个<strong>相遇点</strong>，有助于解决进一步的问题。<a id="more"></a></p>
-<h4 id="问题二：求链表中环的距离"><a href="#问题二：求链表中环的距离" class="headerlink" title="问题二：求链表中环的距离"></a>问题二：求链表中环的距离</h4><p>问题一我们得到的相遇点就是环上的一点，因此求环的距离就变得很简单。<br>只需要记录相遇点的位置，从相遇点发出一个指针每次走一步并计数，再次到达相遇点时便求出了链表中环的距离。</p>
-<h4 id="问题三：找到环的入口结点"><a href="#问题三：找到环的入口结点" class="headerlink" title="问题三：找到环的入口结点"></a>问题三：找到环的入口结点</h4><p><strong>解法一</strong>&emsp;基于问题二得到的距离，可以采用双指针法，一个指针从表头出发，另一个指针先走一个环的距离，再同表头指针一起前进。这两个指针一直隔着一个环的距离，那么他们再次相遇的点，是第一个指针刚进入环的点，即环的入口结点。<br><br><strong>解法二</strong>&emsp;相对而言，解法一比较容易理解，但还有一种更简单的方法得到环的入口结点。<br><br>同样是双指针法，但这次，一个指针在表头，另一个指针在问题一得到的相遇点。两指针再次相遇点即为环的入口结点。<br><br><img src="/images/20033101.png" /> <br><br>如图，表头为<code>A</code>，环入口为<code>B</code>，相遇点为<code>C</code>，AB距离为<code>a</code>，BC距离为<code>b</code>，环长度为<code>r</code>，那么CB距离为<code>r-b</code>。<br><br>slow指针走到C走的距离为<code>S = a + b</code>，fast走过的距离为slow的两倍，假设fast已经走了n圈，即<code>2S = a + nr + b</code>。<br>化简<code>2(a + b) = a + b + nr</code>，得到<code>a = nr - b = (n - 1)r + r - b</code>。<br>即<code>AB = (n - 1)r + CB</code>，解释一下就是A到B的距离，等于从C开始走n-1圈再走到B，不正是两点相遇？</p>
-
+        <div id="hexo-blog-encrypt" data-wpm="别试了 = =" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">密码：</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="b06b4e0868365bb16e175be283fc87f2fe282020b97b79507d0380d4ad2b359d">338a02ab3c214e2371eecdbf8bbc5b9585bac9de3b9d156fad3f401f83d5d82db385524343012d089d271c2de323b616b1278fb1d1bd70e4e7f066c632ea6857a316c620dc42a1d31d7fdf25ab9b747a68052b4f8a3d755096c4539624774aa0c51a98e1c4bc3dac37837c27a672217ac56b479b6e9b9c6ec4a88909af7fe9a12f266c70073568940091fad56c273c6e4b3160e70cf28faf19136ae7812c31cc21ab7ee76eb8221b5fc65ecdbd1603b92da6aa494f56989744cec9aa5cae4c789442d599e35d13dcdf424605a97faeca8d43b2c03424b5386243c15a532ec6be</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
     </div>
 
     
     
     
       
+  <div class="popular-posts-header">相关博文推荐</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\03\31\20033103\" rel="bookmark">今日树洞</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\03\30\20033002\" rel="bookmark">今日树洞</a></div>
+    </li>
+  </ul>
 
         
 
@@ -273,7 +284,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2020/03/31/20033101/" title="链表是否有环问题">http://yoursite.com/2020/03/31/20033101/</a>
+    <a href="http://yoursite.com/2020/04/01/20040101/" title="今日树洞">http://yoursite.com/2020/04/01/20040101/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -284,8 +295,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"># 数据结构</a>
-              <a href="/tags/%E9%93%BE%E8%A1%A8/" rel="tag"># 链表</a>
+              <a href="/tags/%E6%A0%91%E6%B4%9E/" rel="tag"># 树洞</a>
           </div>
 
         
@@ -294,13 +304,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/30/20033002/" rel="prev" title="今日树洞">
+    <a href="/2020/03/31/20033103/" rel="prev" title="今日树洞">
       <i class="fa fa-chevron-left"></i> 今日树洞
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/03/31/20033102/" rel="next" title="C/C++位运算符">
-      C/C++位运算符 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -363,7 +370,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题一：判断链表是否有环"><span class="nav-number">1.</span> <span class="nav-text">问题一：判断链表是否有环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题二：求链表中环的距离"><span class="nav-number">2.</span> <span class="nav-text">问题二：求链表中环的距离</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题三：找到环的入口结点"><span class="nav-number">3.</span> <span class="nav-text">问题三：找到环的入口结点</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
