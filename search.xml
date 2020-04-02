@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>汉明重量</title>
+    <url>/2020/04/02/20040203/</url>
+    <content><![CDATA[<p>汉明重量（Hamming Weight）：一串符号中非零符号的个数。<br></p>
+<p>遇到了好多相似的题，做一个小小总结。<br><br>编写一个函数，输入是一个无符号整数，返回其二进制表达式中数字位为 <code>1</code> 的个数。<br></p>
+<h4 id="偷懒万岁法"><a href="#偷懒万岁法" class="headerlink" title="偷懒万岁法"></a>偷懒万岁法</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> ((<span class="built_in">bitset</span>&lt;<span class="number">32</span>&gt;)n).count();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>不要忘了 <code>#include &lt;bitset&gt;</code> 。</p>
+<h4 id="挨个数数法"><a href="#挨个数数法" class="headerlink" title="挨个数数法"></a>挨个数数法</h4><p>其实也没有名字这么蠢啦，首先应先理解下<code>&lt;&lt;</code>。<br><br>无符号数左移补0，有符号数左移补符号位，举个栗子:<br><br><code>1 &lt;&lt; 5</code> 得到二进制数 <code>100000</code><br><br>接下来理解位运算符<code>&amp;</code>。<br><br>1和0两者与0相与都是0，与1相与都是本身。<br><br>那么奇怪的知识就学到了,<code>n &amp; (1 &lt;&lt; 5)</code>为真则n的倒数第6位为1，否则为0。上代码：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">32</span>;++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(n &amp; (<span class="number">1</span> &lt;&lt; i))</span><br><span class="line">		ans++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="n-amp-n-1-大法"><a href="#n-amp-n-1-大法" class="headerlink" title="n&amp;(n-1)大法"></a>n&amp;(n-1)大法</h4><p>一个很魔幻的位运算，它可以消去右数第一个1。<br><br>挨个消1，消完也就计数完了。就很Nice：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(n)&#123;</span><br><span class="line">		n &amp;= (n<span class="number">-1</span>);</span><br><span class="line">		ans++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>C/C++</tag>
+        <tag>位运算</tag>
+        <tag>汉明</tag>
+        <tag>Hamming</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>今日树洞</title>
     <url>/2020/04/02/20040202/</url>
     <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="别试了 = =" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
