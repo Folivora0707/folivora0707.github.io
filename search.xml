@@ -2,6 +2,44 @@
 <search>
   <entry>
     <title>今日树洞</title>
+    <url>/2020/04/02/20040202/</url>
+    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="别试了 = =" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">密码：</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="71819030915ac0805218651cda232063026d2c98368f4a75401fb3a6dcd034b4">10b8a782221cd4cb8eb558641cff09280c2f336cb1c0f3bd0792425d11698d5c6115ba5577216f52b4eec9fa19bd40fdc98992702a4119ce5873f39c6072461b03ba187fe68ef971ca60e14601d8450c8b40dda9517d3fdb8d8cf0797a057c7ca92f911893448f5cd2a280a283bd15d74ce79db387b6f167ecc3a3e6f00f3e36</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+      <tags>
+        <tag>树洞</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2.1 通信基础</title>
+    <url>/2020/04/02/20040201/</url>
+    <content><![CDATA[<h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><ol>
+<li><p>数据：传送信息的实体<br><br>信号：数据的电气或电磁表现<br><br>数据和信号都分为“模拟的”和“数字的”。<br><br>码元：固定时长的信号波形（数字脉冲）表示一位k进制数，是数字信号的计量单位<br><br>一码元可以携带多个比特信息，使用k进制编码，有k种不同的码元。<a id="more"></a></p>
+</li>
+<li><p>一个数据通信系统主要划分为信源、信道、信宿三部分。<br><br>简单讲，信源就是起点，信道是媒介，信宿是终点。<br><br>按传输信号形式，信道分为模拟信道和数字信道；<br><br>按传输介质，信道分为无线信道和有线信道。<br><br>模拟信道传输宽带信号，称为宽带传输；<br><br>数字信道传输基带信号，称为基带传输。</p>
+</li>
+<li><p>从通信双方的交互方式看，可分为三种基本方式：<br><br>单工通信。<br><br>半双工通信。<br><br>全双工通信。</p>
+</li>
+<li><p>速率可以用码元传输速率和信息传输速率表示。<br><br>码元传输速率：单位时间传输码元个数，又称码元速率、波形速率、调制速率、符号速率，单位是波特（Baud）。<br><br>信息传输速率：单位时间传输比特数，又称信息速率、比特率，单位是比特/秒（bit/s）。</p>
+<h4 id="奈氏准则与香农定理"><a href="#奈氏准则与香农定理" class="headerlink" title="奈氏准则与香农定理"></a>奈氏准则与香农定理</h4></li>
+<li><p>奈奎斯特（Nyquist）定理又称奈氏准则，</p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>王道总结</tag>
+        <tag>物理层</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>今日树洞</title>
     <url>/2020/04/01/20040101/</url>
     <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="别试了 = =" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
   <div class="hbe-input-container">
@@ -46,12 +84,12 @@
 <tbody><tr>
 <td align="center">&amp;</td>
 <td align="center">与</td>
-<td align="left"></td>
+<td align="left">与1相与为本身</td>
 </tr>
 <tr>
 <td align="center">^</td>
 <td align="center">异或</td>
-<td align="left"></td>
+<td align="left">与0异或为本身</td>
 </tr>
 <tr>
 <td align="center">&brvbar;</td>
@@ -66,7 +104,7 @@
 <tr>
 <td align="center">&lt;&lt;</td>
 <td align="center">左移</td>
-<td align="left"></td>
+<td align="left">有符号数补符号位，无符号数补0</td>
 </tr>
 <tr>
 <td align="center">&gt;&gt;</td>

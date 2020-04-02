@@ -38,20 +38,22 @@
 </style>
 
 
-  <meta name="description" content="日常发几句牢骚，不给看。">
+  <meta name="description" content="基本概念 数据：传送信息的实体信号：数据的电气或电磁表现数据和信号都分为“模拟的”和“数字的”。码元：固定时长的信号波形（数字脉冲）表示一位k进制数，是数字信号的计量单位一码元可以携带多个比特信息，使用k进制编码，有k种不同的码元。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="今日树洞">
-<meta property="og:url" content="http://yoursite.com/2020/04/01/20040101/index.html">
+<meta property="og:title" content="2.1 通信基础">
+<meta property="og:url" content="http://yoursite.com/2020/04/02/20040201/index.html">
 <meta property="og:site_name" content="执剑长歌，Biubiubiubiu！">
-<meta property="og:description" content="日常发几句牢骚，不给看。">
+<meta property="og:description" content="基本概念 数据：传送信息的实体信号：数据的电气或电磁表现数据和信号都分为“模拟的”和“数字的”。码元：固定时长的信号波形（数字脉冲）表示一位k进制数，是数字信号的计量单位一码元可以携带多个比特信息，使用k进制编码，有k种不同的码元。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-01T09:05:14.000Z">
-<meta property="article:modified_time" content="2020-04-01T09:09:38.667Z">
+<meta property="article:published_time" content="2020-04-02T02:14:12.000Z">
+<meta property="article:modified_time" content="2020-04-02T02:50:19.197Z">
 <meta property="article:author" content="多喝凉水。">
-<meta property="article:tag" content="树洞">
+<meta property="article:tag" content="计算机网络">
+<meta property="article:tag" content="王道总结">
+<meta property="article:tag" content="物理层">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/04/01/20040101/">
+<link rel="canonical" href="http://yoursite.com/2020/04/02/20040201/">
 
 
 <script id="page-configurations">
@@ -63,7 +65,7 @@
   };
 </script>
 
-  <title>今日树洞 | 执剑长歌，Biubiubiubiu！</title>
+  <title>2.1 通信基础 | 执剑长歌，Biubiubiubiu！</title>
   
 
 
@@ -198,7 +200,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/01/20040101/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/02/20040201/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -211,7 +213,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          今日树洞
+          2.1 通信基础
         </h1>
 
         <div class="post-meta">
@@ -222,7 +224,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-04-01 17:05:14 / 修改时间：17:09:38" itemprop="dateCreated datePublished" datetime="2020-04-01T17:05:14+08:00">2020-04-01</time>
+              <time title="创建时间：2020-04-02 10:14:12 / 修改时间：10:50:19" itemprop="dateCreated datePublished" datetime="2020-04-02T10:14:12+08:00">2020-04-02</time>
             </span>
 
           
@@ -234,8 +236,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/04/01/20040101/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/01/20040101/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/04/02/20040201/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/02/20040201/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -250,15 +252,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <div id="hexo-blog-encrypt" data-wpm="别试了 = =" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <div class="hbe-input-container">
-  <input type="password" id="hbePass" placeholder="" />
-    <label for="hbePass">密码：</label>
-    <div class="bottom-line"></div>
-  </div>
-  <script id="hbeData" type="hbeData" data-hmacdigest="b06b4e0868365bb16e175be283fc87f2fe282020b97b79507d0380d4ad2b359d">338a02ab3c214e2371eecdbf8bbc5b9585bac9de3b9d156fad3f401f83d5d82db385524343012d089d271c2de323b616b1278fb1d1bd70e4e7f066c632ea6857a316c620dc42a1d31d7fdf25ab9b747a68052b4f8a3d755096c4539624774aa0c51a98e1c4bc3dac37837c27a672217ac56b479b6e9b9c6ec4a88909af7fe9a12f266c70073568940091fad56c273c6e4b3160e70cf28faf19136ae7812c31cc21ab7ee76eb8221b5fc65ecdbd1603b92da6aa494f56989744cec9aa5cae4c789442d599e35d13dcdf424605a97faeca8d43b2c03424b5386243c15a532ec6be</script>
-</div>
-<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
+        <h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><ol>
+<li><p>数据：传送信息的实体<br><br>信号：数据的电气或电磁表现<br><br>数据和信号都分为“模拟的”和“数字的”。<br><br>码元：固定时长的信号波形（数字脉冲）表示一位k进制数，是数字信号的计量单位<br><br>一码元可以携带多个比特信息，使用k进制编码，有k种不同的码元。<a id="more"></a></p>
+</li>
+<li><p>一个数据通信系统主要划分为信源、信道、信宿三部分。<br><br>简单讲，信源就是起点，信道是媒介，信宿是终点。<br><br>按传输信号形式，信道分为模拟信道和数字信道；<br><br>按传输介质，信道分为无线信道和有线信道。<br><br>模拟信道传输宽带信号，称为宽带传输；<br><br>数字信道传输基带信号，称为基带传输。</p>
+</li>
+<li><p>从通信双方的交互方式看，可分为三种基本方式：<br><br>单工通信。<br><br>半双工通信。<br><br>全双工通信。</p>
+</li>
+<li><p>速率可以用码元传输速率和信息传输速率表示。<br><br>码元传输速率：单位时间传输码元个数，又称码元速率、波形速率、调制速率、符号速率，单位是波特（Baud）。<br><br>信息传输速率：单位时间传输比特数，又称信息速率、比特率，单位是比特/秒（bit/s）。</p>
+<h4 id="奈氏准则与香农定理"><a href="#奈氏准则与香农定理" class="headerlink" title="奈氏准则与香农定理"></a>奈氏准则与香农定理</h4></li>
+<li><p>奈奎斯特（Nyquist）定理又称奈氏准则，</p>
+</li>
+</ol>
+
     </div>
 
     
@@ -268,13 +274,10 @@
   <div class="popular-posts-header">相关博文推荐</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\03\30\20033002\" rel="bookmark">今日树洞</a></div>
+      <div class="popular-posts-title"><a href="\2020\03\29\20032901\" rel="bookmark">1.1 概述</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\03\31\20033103\" rel="bookmark">今日树洞</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\04\02\20040202\" rel="bookmark">今日树洞</a></div>
+      <div class="popular-posts-title"><a href="\2020\03\30\20033001\" rel="bookmark">1.2 体系结构与参考模型</a></div>
     </li>
   </ul>
 
@@ -287,7 +290,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2020/04/01/20040101/" title="今日树洞">http://yoursite.com/2020/04/01/20040101/</a>
+    <a href="http://yoursite.com/2020/04/02/20040201/" title="2.1 通信基础">http://yoursite.com/2020/04/02/20040201/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -298,7 +301,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%A0%91%E6%B4%9E/" rel="tag"># 树洞</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag"># 计算机网络</a>
+              <a href="/tags/%E7%8E%8B%E9%81%93%E6%80%BB%E7%BB%93/" rel="tag"># 王道总结</a>
+              <a href="/tags/%E7%89%A9%E7%90%86%E5%B1%82/" rel="tag"># 物理层</a>
           </div>
 
         
@@ -307,12 +312,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/31/20033103/" rel="prev" title="今日树洞">
+    <a href="/2020/04/01/20040101/" rel="prev" title="今日树洞">
       <i class="fa fa-chevron-left"></i> 今日树洞
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/04/02/20040201/" rel="next" title="2.1 通信基础">
-      2.1 通信基础 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/04/02/20040202/" rel="next" title="今日树洞">
+      今日树洞 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -376,6 +381,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#奈氏准则与香农定理"><span class="nav-number">2.</span> <span class="nav-text">奈氏准则与香农定理</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
