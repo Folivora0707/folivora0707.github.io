@@ -84,7 +84,7 @@
 <tbody><tr>
 <td align="center">&amp;</td>
 <td align="center">与</td>
-<td align="left">与1相与为本身</td>
+<td align="left">与1相与为本身，与0相与为0，n&amp;(n-1)消去右数第一个1</td>
 </tr>
 <tr>
 <td align="center">^</td>
