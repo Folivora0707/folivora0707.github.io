@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>一个周末学会光线追踪？（一）</title>
+    <url>/2020/04/10/20041001/</url>
+    <content><![CDATA[<p>如题，反正我不行（理直气壮）。<br></p>
+<h5 id="《Ray-Tracing-in-One-Weekend》"><a href="#《Ray-Tracing-in-One-Weekend》" class="headerlink" title="《Ray Tracing in One Weekend》"></a>《Ray Tracing in One Weekend》</h5><p>这其实是Peter Shirley老师的一本书，清晰地讲述了如何用C++来做一个简单的光线追踪引擎。这本书在GitHub上开源，换句话说，它是免费的。这本书其实是一个系列，一共三本，这本是最简单的一本。<br><br>书的传送门，点 <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html" target="_blank" rel="noopener">这里</a> 。<a id="more"></a><br><br>今天主要讲述学习这本书的准备工作，很简单，但什么也不知道的情况下也能浪费人很多时间。那么，进入正题：</p>
+<h5 id="PPM文件的格式"><a href="#PPM文件的格式" class="headerlink" title="PPM文件的格式"></a>PPM文件的格式</h5><p>书上这这张图看着很明白。<br><img src="/images/20041001.jpg"/></p>
+<blockquote>
+<p>首先PPM图片可以用ASCII码描述,第一行的P3意味着这幅PPM图使用ASCII码描述的，当然还有其他的描述方法,比如RAW；<br><br>第二行是图像的宽高，单位是像素；<br><br>第三行就是像素颜色最大值，255是标准RGB颜色空间的最大值；<br><br>剩下的就是每个像素的RGB值了。描述顺序为从左到右，从上到下。<br></p>
+</blockquote>
+<p>ASCII码描述很容易理解，就是像素的RGB值。<br><img src="/images/20041002.png"/><br>其他的描述方法就很难理解了。<br><img src="/images/20041003.png"/></p>
+<h5 id="PPM文件的查看工具"><a href="#PPM文件的查看工具" class="headerlink" title="PPM文件的查看工具"></a>PPM文件的查看工具</h5><p>这个从网上一搜基本答案就是PPMView，这是个非常小的工具，就十几kb。似乎的确是最好的选择，但我不认同。这东西太古老了，现在的Win10系统装上他之后基本都会发现缺少一个Active控件而无法打开。<br><br>其实PS就可以打开PPM文件，此外像书的作者也提到有在线网站可以查看PPM图片。<br><br>我鼓捣了会，最终选择了GIMP,这个软件的开发者其实就是PPM文件格式的开创者。想要了解他儿子找他爹总不会错。</p>
+<h5 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h5><p>了解了PPM文件格式其实我们就可以手动写一张图片，但一张图片就算只有几百像素连记带写也挺累人的，我们当然不会这么傻，一个简单的C++程序就可以帮助我们完成这项工作。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> image_width = <span class="number">200</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> image_height = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"P3\n"</span> &lt;&lt; image_width &lt;&lt; <span class="string">' '</span> &lt;&lt; image_height &lt;&lt; <span class="string">"\n255\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = image_height<span class="number">-1</span>; j &gt;= <span class="number">0</span>; --j) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; image_width; ++i) &#123;</span><br><span class="line">            <span class="keyword">auto</span> r = <span class="keyword">double</span>(i) / image_width;</span><br><span class="line">            <span class="keyword">auto</span> g = <span class="keyword">double</span>(j) / image_height;</span><br><span class="line">            <span class="keyword">auto</span> b = <span class="number">0.2</span>;</span><br><span class="line">            <span class="keyword">int</span> ir = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(<span class="number">255.999</span> * r);</span><br><span class="line">            <span class="keyword">int</span> ig = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(<span class="number">255.999</span> * g);</span><br><span class="line">            <span class="keyword">int</span> ib = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(<span class="number">255.999</span> * b);</span><br><span class="line">            <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; ir &lt;&lt; <span class="string">' '</span> &lt;&lt; ig &lt;&lt; <span class="string">' '</span> &lt;&lt; ib &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段程序就可以输出一张PPM图片的ASCII描述内容，也不是很难理解。</p>
+<h5 id="命令提示符中用-gt-直接输出PPM文件"><a href="#命令提示符中用-gt-直接输出PPM文件" class="headerlink" title="命令提示符中用 &gt; 直接输出PPM文件"></a>命令提示符中用 <code>&gt;</code> 直接输出PPM文件</h5><p>打开命令提示符，cd定位到我们C++代码的exe程序所在位置，<code>&gt; image.ppm</code> 直接输出PPM文件，如图：<br>&emsp;<br><img src="/images/20041004.png"/><br>回车输出，<code>.exe</code> 所在位置找到新生成的 <code>.ppm</code>，GIMP打开！<br><img src="/images/20041005.png"/><br>Ohhhhhh，虽然你很丑，但是为父爱你。</p>
+]]></content>
+      <tags>
+        <tag>C/C++</tag>
+        <tag>光线追踪</tag>
+        <tag>PPM图片</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>不用加减乘除做加法</title>
     <url>/2020/04/08/20040801/</url>
     <content><![CDATA[<p>1 + 1 = ？<br><br>2、 10B、 王、 丰、 田、 申、 由、 甲 …<br><br>简单的题就是会出现一些奇奇怪怪的变体，不用加法去做加法，其实很自然想到位运算（关键其他的运算也没接触过）。<br><a id="more"></a></p>

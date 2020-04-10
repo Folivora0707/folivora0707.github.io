@@ -38,23 +38,28 @@
 </style>
 
 
-  <meta name="description" content="汉明重量（Hamming Weight）：一串符号中非零符号的个数。 遇到了好多相似的题，做一个小小总结。编写一个函数，输入是一个无符号整数，返回其二进制表达式中数字位为 1 的个数。 偷懒万岁法123int hammingWeight(uint32_t n) &amp;#123;	return ((bitset&lt;32&gt;)n).count();&amp;#125;">
+  <meta name="description" content="如题，反正我不行（理直气壮）。 《Ray Tracing in One Weekend》这其实是Peter Shirley老师的一本书，清晰地讲述了如何用C++来做一个简单的光线追踪引擎。这本书在GitHub上开源，换句话说，它是免费的。这本书其实是一个系列，一共三本，这本是最简单的一本。书的传送门，点 这里 。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="汉明重量">
-<meta property="og:url" content="http://yoursite.com/2020/04/02/20040203/index.html">
+<meta property="og:title" content="一个周末学会光线追踪？（一）">
+<meta property="og:url" content="http://yoursite.com/2020/04/10/20041001/index.html">
 <meta property="og:site_name" content="执剑长歌，Biubiubiubiu！">
-<meta property="og:description" content="汉明重量（Hamming Weight）：一串符号中非零符号的个数。 遇到了好多相似的题，做一个小小总结。编写一个函数，输入是一个无符号整数，返回其二进制表达式中数字位为 1 的个数。 偷懒万岁法123int hammingWeight(uint32_t n) &amp;#123;	return ((bitset&lt;32&gt;)n).count();&amp;#125;">
+<meta property="og:description" content="如题，反正我不行（理直气壮）。 《Ray Tracing in One Weekend》这其实是Peter Shirley老师的一本书，清晰地讲述了如何用C++来做一个简单的光线追踪引擎。这本书在GitHub上开源，换句话说，它是免费的。这本书其实是一个系列，一共三本，这本是最简单的一本。书的传送门，点 这里 。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-02T08:22:26.000Z">
-<meta property="article:modified_time" content="2020-04-02T09:01:47.542Z">
+<meta property="og:image" content="http://yoursite.com/images/20041001.jpg">
+<meta property="og:image" content="http://yoursite.com/images/20041002.png">
+<meta property="og:image" content="http://yoursite.com/images/20041003.png">
+<meta property="og:image" content="http://yoursite.com/images/20041004.png">
+<meta property="og:image" content="http://yoursite.com/images/20041005.png">
+<meta property="article:published_time" content="2020-04-10T06:42:29.000Z">
+<meta property="article:modified_time" content="2020-04-10T08:41:52.314Z">
 <meta property="article:author" content="多喝凉水。">
 <meta property="article:tag" content="C&#x2F;C++">
-<meta property="article:tag" content="位运算">
-<meta property="article:tag" content="汉明">
-<meta property="article:tag" content="Hamming">
+<meta property="article:tag" content="光线追踪">
+<meta property="article:tag" content="PPM图片">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/20041001.jpg">
 
-<link rel="canonical" href="http://yoursite.com/2020/04/02/20040203/">
+<link rel="canonical" href="http://yoursite.com/2020/04/10/20041001/">
 
 
 <script id="page-configurations">
@@ -66,7 +71,7 @@
   };
 </script>
 
-  <title>汉明重量 | 执剑长歌，Biubiubiubiu！</title>
+  <title>一个周末学会光线追踪？（一） | 执剑长歌，Biubiubiubiu！</title>
   
 
 
@@ -201,7 +206,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/02/20040203/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/10/20041001/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -214,7 +219,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          汉明重量
+          一个周末学会光线追踪？（一）
         </h1>
 
         <div class="post-meta">
@@ -225,7 +230,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-04-02 16:22:26 / 修改时间：17:01:47" itemprop="dateCreated datePublished" datetime="2020-04-02T16:22:26+08:00">2020-04-02</time>
+              <time title="创建时间：2020-04-10 14:42:29 / 修改时间：16:41:52" itemprop="dateCreated datePublished" datetime="2020-04-10T14:42:29+08:00">2020-04-10</time>
             </span>
 
           
@@ -237,8 +242,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/04/02/20040203/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/02/20040203/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/04/10/20041001/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/10/20041001/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -253,16 +258,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>汉明重量（Hamming Weight）：一串符号中非零符号的个数。<br></p>
-<p>遇到了好多相似的题，做一个小小总结。<br><br>编写一个函数，输入是一个无符号整数，返回其二进制表达式中数字位为 <code>1</code> 的个数。<br></p>
-<h4 id="偷懒万岁法"><a href="#偷懒万岁法" class="headerlink" title="偷懒万岁法"></a>偷懒万岁法</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> ((<span class="built_in">bitset</span>&lt;<span class="number">32</span>&gt;)n).count();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>不要忘了 <code>#include &lt;bitset&gt;</code> 。</p>
-<h4 id="挨个数数法"><a href="#挨个数数法" class="headerlink" title="挨个数数法"></a>挨个数数法</h4><p>其实也没有名字这么蠢啦，首先应先理解下<code>&lt;&lt;</code>。<br><br>无符号数左移补0，有符号数左移补符号位，举个栗子:<br><br><code>1 &lt;&lt; 5</code> 得到二进制数 <code>100000</code><br><br>接下来理解位运算符<code>&amp;</code>。<br><br>1和0两者与0相与都是0，与1相与都是本身。<br><br>那么奇怪的知识就学到了,<code>n &amp; (1 &lt;&lt; 5)</code>为真则n的倒数第6位为1，否则为0。上代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">32</span>;++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(n &amp; (<span class="number">1</span> &lt;&lt; i))</span><br><span class="line">		ans++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="n-amp-n-1-大法"><a href="#n-amp-n-1-大法" class="headerlink" title="n&amp;(n-1)大法"></a>n&amp;(n-1)大法</h4><p>一个很魔幻的位运算，它可以消去右数第一个1。<br><br>挨个消1，消完也就计数完了。就很Nice：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(n)&#123;</span><br><span class="line">		n &amp;= (n<span class="number">-1</span>);</span><br><span class="line">		ans++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <p>如题，反正我不行（理直气壮）。<br></p>
+<h5 id="《Ray-Tracing-in-One-Weekend》"><a href="#《Ray-Tracing-in-One-Weekend》" class="headerlink" title="《Ray Tracing in One Weekend》"></a>《Ray Tracing in One Weekend》</h5><p>这其实是Peter Shirley老师的一本书，清晰地讲述了如何用C++来做一个简单的光线追踪引擎。这本书在GitHub上开源，换句话说，它是免费的。这本书其实是一个系列，一共三本，这本是最简单的一本。<br><br>书的传送门，点 <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html" target="_blank" rel="noopener">这里</a> 。<a id="more"></a><br><br>今天主要讲述学习这本书的准备工作，很简单，但什么也不知道的情况下也能浪费人很多时间。那么，进入正题：</p>
+<h5 id="PPM文件的格式"><a href="#PPM文件的格式" class="headerlink" title="PPM文件的格式"></a>PPM文件的格式</h5><p>书上这这张图看着很明白。<br><img src="/images/20041001.jpg"/></p>
+<blockquote>
+<p>首先PPM图片可以用ASCII码描述,第一行的P3意味着这幅PPM图使用ASCII码描述的，当然还有其他的描述方法,比如RAW；<br><br>第二行是图像的宽高，单位是像素；<br><br>第三行就是像素颜色最大值，255是标准RGB颜色空间的最大值；<br><br>剩下的就是每个像素的RGB值了。描述顺序为从左到右，从上到下。<br></p>
+</blockquote>
+<p>ASCII码描述很容易理解，就是像素的RGB值。<br><img src="/images/20041002.png"/><br>其他的描述方法就很难理解了。<br><img src="/images/20041003.png"/></p>
+<h5 id="PPM文件的查看工具"><a href="#PPM文件的查看工具" class="headerlink" title="PPM文件的查看工具"></a>PPM文件的查看工具</h5><p>这个从网上一搜基本答案就是PPMView，这是个非常小的工具，就十几kb。似乎的确是最好的选择，但我不认同。这东西太古老了，现在的Win10系统装上他之后基本都会发现缺少一个Active控件而无法打开。<br><br>其实PS就可以打开PPM文件，此外像书的作者也提到有在线网站可以查看PPM图片。<br><br>我鼓捣了会，最终选择了GIMP,这个软件的开发者其实就是PPM文件格式的开创者。想要了解他儿子找他爹总不会错。</p>
+<h5 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h5><p>了解了PPM文件格式其实我们就可以手动写一张图片，但一张图片就算只有几百像素连记带写也挺累人的，我们当然不会这么傻，一个简单的C++程序就可以帮助我们完成这项工作。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> image_width = <span class="number">200</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> image_height = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"P3\n"</span> &lt;&lt; image_width &lt;&lt; <span class="string">' '</span> &lt;&lt; image_height &lt;&lt; <span class="string">"\n255\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = image_height<span class="number">-1</span>; j &gt;= <span class="number">0</span>; --j) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; image_width; ++i) &#123;</span><br><span class="line">            <span class="keyword">auto</span> r = <span class="keyword">double</span>(i) / image_width;</span><br><span class="line">            <span class="keyword">auto</span> g = <span class="keyword">double</span>(j) / image_height;</span><br><span class="line">            <span class="keyword">auto</span> b = <span class="number">0.2</span>;</span><br><span class="line">            <span class="keyword">int</span> ir = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(<span class="number">255.999</span> * r);</span><br><span class="line">            <span class="keyword">int</span> ig = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(<span class="number">255.999</span> * g);</span><br><span class="line">            <span class="keyword">int</span> ib = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(<span class="number">255.999</span> * b);</span><br><span class="line">            <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; ir &lt;&lt; <span class="string">' '</span> &lt;&lt; ig &lt;&lt; <span class="string">' '</span> &lt;&lt; ib &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段程序就可以输出一张PPM图片的ASCII描述内容，也不是很难理解。</p>
+<h5 id="命令提示符中用-gt-直接输出PPM文件"><a href="#命令提示符中用-gt-直接输出PPM文件" class="headerlink" title="命令提示符中用 &gt; 直接输出PPM文件"></a>命令提示符中用 <code>&gt;</code> 直接输出PPM文件</h5><p>打开命令提示符，cd定位到我们C++代码的exe程序所在位置，<code>&gt; image.ppm</code> 直接输出PPM文件，如图：<br>&emsp;<br><img src="/images/20041004.png"/><br>回车输出，<code>.exe</code> 所在位置找到新生成的 <code>.ppm</code>，GIMP打开！<br><img src="/images/20041005.png"/><br>Ohhhhhh，虽然你很丑，但是为父爱你。</p>
 
     </div>
 
@@ -276,10 +283,10 @@
       <div class="popular-posts-title"><a href="\2020\03\31\20033102\" rel="bookmark">C/C++位运算符</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\04\08\20040801\" rel="bookmark">不用加减乘除做加法</a></div>
+      <div class="popular-posts-title"><a href="\2020\04\02\20040203\" rel="bookmark">汉明重量</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2020\04\10\20041001\" rel="bookmark">一个周末学会光线追踪？（一）</a></div>
+      <div class="popular-posts-title"><a href="\2020\04\08\20040801\" rel="bookmark">不用加减乘除做加法</a></div>
     </li>
   </ul>
 
@@ -292,7 +299,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2020/04/02/20040203/" title="汉明重量">http://yoursite.com/2020/04/02/20040203/</a>
+    <a href="http://yoursite.com/2020/04/10/20041001/" title="一个周末学会光线追踪？（一）">http://yoursite.com/2020/04/10/20041001/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -304,9 +311,8 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/C-C/" rel="tag"># C/C++</a>
-              <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" rel="tag"># 位运算</a>
-              <a href="/tags/%E6%B1%89%E6%98%8E/" rel="tag"># 汉明</a>
-              <a href="/tags/Hamming/" rel="tag"># Hamming</a>
+              <a href="/tags/%E5%85%89%E7%BA%BF%E8%BF%BD%E8%B8%AA/" rel="tag"># 光线追踪</a>
+              <a href="/tags/PPM%E5%9B%BE%E7%89%87/" rel="tag"># PPM图片</a>
           </div>
 
         
@@ -315,13 +321,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/04/02/20040202/" rel="prev" title="今日树洞">
-      <i class="fa fa-chevron-left"></i> 今日树洞
+    <a href="/2020/04/08/20040801/" rel="prev" title="不用加减乘除做加法">
+      <i class="fa fa-chevron-left"></i> 不用加减乘除做加法
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/04/08/20040801/" rel="next" title="不用加减乘除做加法">
-      不用加减乘除做加法 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -384,7 +387,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#偷懒万岁法"><span class="nav-number">1.</span> <span class="nav-text">偷懒万岁法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#挨个数数法"><span class="nav-number">2.</span> <span class="nav-text">挨个数数法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#n-amp-n-1-大法"><span class="nav-number">3.</span> <span class="nav-text">n&amp;(n-1)大法</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#《Ray-Tracing-in-One-Weekend》"><span class="nav-number">1.</span> <span class="nav-text">《Ray Tracing in One Weekend》</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PPM文件的格式"><span class="nav-number">2.</span> <span class="nav-text">PPM文件的格式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PPM文件的查看工具"><span class="nav-number">3.</span> <span class="nav-text">PPM文件的查看工具</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Hello-World"><span class="nav-number">4.</span> <span class="nav-text">Hello World</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#命令提示符中用-gt-直接输出PPM文件"><span class="nav-number">5.</span> <span class="nav-text">命令提示符中用 &gt; 直接输出PPM文件</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
