@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>今日树洞</title>
+    <url>/2020/04/15/20041501/</url>
+    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="别试了 = =" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">密码：</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="3fea260e64700d36898c5d808c8de1dcd2665083ca3335f07cfb99ace0192ef2">43585b966fdde9aae09e60ca1f281f2b3bbaeaa1859fba8d4957ac350334a3cbafddc1b26b31071cf3a0114afb8fe1efd0e37efced1822366d659c1f8d6508769ecd26bb98bea4de5a5176b4342f66e5327bf469e58ac99b1c8dfcebb62c132c</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+      <tags>
+        <tag>树洞</tag>
+        <tag>考研</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一个周末学会光线追踪？（一）</title>
     <url>/2020/04/10/20041001/</url>
     <content><![CDATA[<p>如题，反正我不行（理直气壮）。<br></p>
@@ -10,7 +27,7 @@
 <p>首先PPM图片可以用ASCII码描述,第一行的P3意味着这幅PPM图使用ASCII码描述的，当然还有其他的描述方法,比如RAW；<br><br>第二行是图像的宽高，单位是像素；<br><br>第三行就是像素颜色最大值，255是标准RGB颜色空间的最大值；<br><br>剩下的就是每个像素的RGB值了。描述顺序为从左到右，从上到下。<br></p>
 </blockquote>
 <p>ASCII码描述很容易理解，就是像素的RGB值。<br><img src="/images/20041002.png"/><br>其他的描述方法就很难理解了。<br><img src="/images/20041003.png"/></p>
-<h5 id="PPM文件的查看工具"><a href="#PPM文件的查看工具" class="headerlink" title="PPM文件的查看工具"></a>PPM文件的查看工具</h5><p>这个从网上一搜基本答案就是PPMView，这是个非常小的工具，就十几kb。似乎的确是最好的选择，但我不认同。这东西太古老了，现在的Win10系统装上他之后基本都会发现缺少一个Active控件而无法打开。<br><br>其实PS就可以打开PPM文件，此外像书的作者也提到有在线网站可以查看PPM图片。<br><br>我鼓捣了会，最终选择了GIMP,这个软件的开发者其实就是PPM文件格式的开创者。想要了解他儿子找他爹总不会错。</p>
+<h5 id="PPM文件的查看工具"><a href="#PPM文件的查看工具" class="headerlink" title="PPM文件的查看工具"></a>PPM文件的查看工具</h5><p>这个从网上一搜基本答案就是PPMView，这是个非常小的工具，就十几kb。似乎的确是最好的选择，但我不认同。这东西太古老了，现在的Win10系统装上他之后基本都会发现缺少一个Active控件而无法打开。<br><br>其实PS就可以打开PPM文件，此外像书的作者也提到有在线网站可以查看PPM图片。<br><br>我鼓捣了会，最终选择了GIMP,这个软件的开发者其实就是PPM文件格式的开创者。想要了解他儿子找他爹总不会错。<br><br>再后来我发现其实支持ppm的看图软件有很多，比如我电脑上的默认看图软件IrfanView（比GIMP不知道轻便几十万倍），我真不知道之前我为什么脑抽鼓捣这个。</p>
 <h5 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h5><p>了解了PPM文件格式其实我们就可以手动写一张图片，但一张图片就算只有几百像素连记带写也挺累人的，我们当然不会这么傻，一个简单的C++程序就可以帮助我们完成这项工作。</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> image_width = <span class="number">200</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> image_height = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"P3\n"</span> &lt;&lt; image_width &lt;&lt; <span class="string">' '</span> &lt;&lt; image_height &lt;&lt; <span class="string">"\n255\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = image_height<span class="number">-1</span>; j &gt;= <span class="number">0</span>; --j) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; image_width; ++i) &#123;</span><br><span class="line">            <span class="keyword">auto</span> r = <span class="keyword">double</span>(i) / image_width;</span><br><span class="line">            <span class="keyword">auto</span> g = <span class="keyword">double</span>(j) / image_height;</span><br><span class="line">            <span class="keyword">auto</span> b = <span class="number">0.2</span>;</span><br><span class="line">            <span class="keyword">int</span> ir = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(<span class="number">255.999</span> * r);</span><br><span class="line">            <span class="keyword">int</span> ig = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(<span class="number">255.999</span> * g);</span><br><span class="line">            <span class="keyword">int</span> ib = <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(<span class="number">255.999</span> * b);</span><br><span class="line">            <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; ir &lt;&lt; <span class="string">' '</span> &lt;&lt; ig &lt;&lt; <span class="string">' '</span> &lt;&lt; ib &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这段程序就可以输出一张PPM图片的ASCII描述内容，也不是很难理解。</p>
